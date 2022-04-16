@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import domain.NumberDTO;
+import domain.NumberService;
 import lombok.extern.log4j.Log4j;
 
 @Controller
@@ -27,4 +29,15 @@ public class GameController {
 		log.info("basic get only get.........");
 	}
 	
+	@SuppressWarnings("null")
+	@GetMapping("/computer")
+	public void ComputerNumber() {
+		
+		NumberDTO dto = null;
+		NumberService s = null;
+		
+		dto.setComputerNumber(s.ComputerNumber());
+		log.info("ComputerNumber : " + dto.getComputerNumber());
+		
+	}
 }
