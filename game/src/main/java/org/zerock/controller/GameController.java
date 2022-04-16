@@ -29,15 +29,12 @@ public class GameController {
 		log.info("basic get only get.........");
 	}
 	
-	@SuppressWarnings("null")
 	@GetMapping("/computer")
-	public void ComputerNumber() {
-		
-		NumberDTO dto = null;
-		NumberService s = null;
+	public String ComputerNumber(NumberDTO dto, NumberService s) {
 		
 		dto.setComputerNumber(s.ComputerNumber());
 		log.info("ComputerNumber : " + dto.getComputerNumber());
 		
+		return "/game/computer";
 	}
 }
